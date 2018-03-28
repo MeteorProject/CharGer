@@ -855,31 +855,31 @@ public class EditFrame extends JFrame
         }
 */
         switch ( key ) {
-            case KeyEvent.VK_LEFT:
+            case (KeyEvent.VK_LEFT || KeyEvent.VK_RIGHT) :
                 moveSelectedObjects( TheGraph, new Point2D.Double( -1 * delta, 0 ) );
                 break;
-            case KeyEvent.VK_RIGHT:
+      /*      case KeyEvent.VK_RIGHT:
                 moveSelectedObjects( TheGraph, new Point2D.Double( +1 * delta, 0 ) );
                 break;
-            case KeyEvent.VK_DOWN:
+     */       case (KeyEvent.VK_DOWN || KeyEvent.VK_UP):
                 moveSelectedObjects( TheGraph, new Point2D.Double( 0, +1 * delta ) );
                 break;
-            case KeyEvent.VK_UP:
+     /*      case KeyEvent.VK_UP:
                 moveSelectedObjects( TheGraph, new Point2D.Double( 0, -1 * delta ) );
                 break;
-
+*/
 
             
-            case KeyEvent.VK_MINUS:
+            case (KeyEvent.VK_MINUS || KeyEvent.VK_PLUS) :
                 b = emgr.reduceSelection( delta, true );
                 repaint();
                 break;
             
-            case KeyEvent.VK_PLUS:
+         /*   case KeyEvent.VK_PLUS:
                 b = emgr.enlargeSelection( delta, true );
                 repaint();
                 break;
-                
+           */     
             case KeyEvent.VK_DELETE:
                 emgr.performActionDeleteSelection();
                 repaint();
