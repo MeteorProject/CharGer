@@ -844,16 +844,16 @@ public class EditFrame extends JFrame
         if ( e.isShiftDown() ) {
             delta = 4;	// if we're moving with the arrow keys, or expanding/contracting, move  faster with the shift key
         }
-        if ( e.isControlDown() ) {
+        if ( e.isControlDown() || e.isAltDown() || e.isMetaDown() ) {
             return;
         }
-        if ( e.isAltDown() ) {
+      /*  if ( e.isAltDown() ) {
             return;
         }
         if ( e.isMetaDown() ) {
             return;
         }
-
+*/
         switch ( key ) {
             case KeyEvent.VK_LEFT:
                 moveSelectedObjects( TheGraph, new Point2D.Double( -1 * delta, 0 ) );
@@ -869,13 +869,12 @@ public class EditFrame extends JFrame
                 break;
 
 
-            case KeyEvent.VK_SUBTRACT:
+            
             case KeyEvent.VK_MINUS:
                 b = emgr.reduceSelection( delta, true );
                 repaint();
                 break;
-            case KeyEvent.VK_EQUALS:
-            case KeyEvent.VK_ADD:
+            
             case KeyEvent.VK_PLUS:
                 b = emgr.enlargeSelection( delta, true );
                 repaint();
@@ -957,6 +956,7 @@ public class EditFrame extends JFrame
         return rect;
     }
 
+    
     /**
      * Handles the operations needed when the mouse is pressed. Choose the
      * appropriate object (if any) and set variables for mouse released to use.
