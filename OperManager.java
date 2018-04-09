@@ -249,7 +249,7 @@ public class OperManager {
         try {
             Global.info( "finalizing oper manager of frame " + ef.editFrameNum );
 
-            super.finalize();
+            //super.finalize();
         } catch ( Throwable t ) {
             throw t;
         } finally {
