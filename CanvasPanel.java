@@ -366,7 +366,7 @@ public class CanvasPanel extends JPanel implements Scrollable, ActionListener {
         try {
             Global.info( "Canvas Panel finalized." );
             ef = null;
-            super.finalize();
+            //super.finalize();
         } catch ( Throwable t ) {
             throw t;
         } finally {
