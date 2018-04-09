@@ -718,7 +718,7 @@ public class HubFrame extends JFrame implements ManagedWindow {
         Global.refreshWindowMenuList( windowMenu, this );
         refreshFileList();
         // prepare a memory display, but do garbage collection first
-        System.gc();
+        // System.gc();
         setCursor( new Cursor( Cursor.DEFAULT_CURSOR ) );
         NumberFormat nformat = NumberFormat.getNumberInstance();
         nformat.setMaximumFractionDigits( 2 );
